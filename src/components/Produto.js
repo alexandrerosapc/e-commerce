@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
-export default function Produto({produto}){
+export default function Produto({produto, adicionarProdutoAoCarrinho}){
     return(
         <ItemProduto>
             <img src={produto.imagem} />
-            <div class="informacoes">
+            <div className="informacoes">
                 <span>{produto.nome}</span>
                 <span>{produto.preco}</span>
             </div>
-            <button>Comprar</button>
+            <button
+              onClick={() => adicionarProdutoAoCarrinho(produto)}
+            >Comprar</button>
         </ItemProduto>
     )
 }

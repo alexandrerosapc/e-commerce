@@ -1,21 +1,19 @@
-import { useState } from "react";
-import ItemC from "./ItemC"
+import ItemC from "./ItemC";
 import styled from "styled-components";
 
-export default function Carrinho(props){
-    const { produtos } = props
-    const [adicionado, setAdicionado] = useState ("")
-
-    return(
-        <ContainerCarrinho>
-            {produtos.map((prod) =>
-                <ItemC
-                    key={prod.id}
-                    produto={prod}
-                />)
-            }
-        </ContainerCarrinho>
-    )
+export default function Carrinho({ produtos, removerProdutoDoCarrinho }) {
+  return (
+    <ContainerCarrinho>
+      {produtos.map((produto, index) => (
+        <ItemC 
+        key={index} 
+        produto={produto}
+        removerProdutoDoCarrinho={removerProdutoDoCarrinho}
+        index={index}
+        />
+      ))}
+    </ContainerCarrinho>
+  );
 }
 
 const ContainerCarrinho = styled.div`

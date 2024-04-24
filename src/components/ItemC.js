@@ -1,14 +1,15 @@
 import styled from "styled-components"
 
-export default function ItemC({produto}) {
+export default function ItemC({produto, index, removerProdutoDoCarrinho}) {
+
     return (
         <ItemCarrinho>
             <img src={produto.imagem}/>
             <div>
-                <p>{produto.nome}</p>
+                <strong>{produto.nome}</strong>
                 <p>{produto.preco}</p>
             </div>
-            <button>X</button>
+            <button onClick={() => removerProdutoDoCarrinho(index)} >X</button>
         </ItemCarrinho>
     )
 }

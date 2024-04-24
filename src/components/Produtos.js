@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import Produto from "./Produto"
-export default function Produtos(props) {
-    const { produtos } = props
-
+export default function Produtos({produtos, adicionarProdutoAoCarrinho}) {
     return (
 
         <ContainerLista>
@@ -10,6 +8,7 @@ export default function Produtos(props) {
                 <Produto
                     key={prod.id}
                     produto={prod}
+                    adicionarProdutoAoCarrinho={adicionarProdutoAoCarrinho}
                 />)
             }
         </ContainerLista>
